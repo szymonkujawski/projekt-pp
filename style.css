@@ -1,0 +1,149 @@
+:root {
+  --bg: #ffffff;
+  --text: #111;
+  --primary: #b91c1c;
+  --card: #f3f3f3;
+  --border: #ddd;
+  --input-bg: #ffffff;
+  --input-text: #111;
+}
+
+[data-theme='dark'] {
+  --bg: #0f0f0f;
+  --text: #eee;
+  --card: #1c1c1c;
+  --border: #333;
+  --input-bg: #1c1c1c;
+  --input-text: #eee;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
+nav a {
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--text);
+}
+nav a:hover {
+  color: var(--primary);
+}
+
+button {
+  background: var(--primary);
+  border: none;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+}
+button.secondary {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+/* 🔍 SEARCH BAR */
+.search-bar {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 0.6rem;
+  background: var(--input-bg);
+  color: var(--input-text);
+  border: 1px solid var(--border);
+  outline: none;
+}
+
+.search-bar input::placeholder {
+  color: color-mix(in srgb, var(--input-text) 60%, transparent);
+}
+
+.search-bar input:focus {
+  border-color: var(--primary);
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.album {
+  background: var(--card);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.album:hover {
+  transform: translateY(-4px);
+}
+.album img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+/* PRODUCT */
+.product {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: var(--card);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.tracklist li {
+  border-bottom: 1px solid var(--border);
+  padding: 0.4rem 0;
+}
+
+/* CART */
+.cart-item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.qty-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+  .product {
+    grid-template-columns: 1fr;
+  }
+}
