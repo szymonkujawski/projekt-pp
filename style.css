@@ -296,3 +296,165 @@ button.secondary {
 .qty-buttons button:active {
   transform: scale(0.95);
 }
+
+/* Header layout fix – centrowanie menu */
+
+header {
+  display: flex;
+  align-items: center;
+}
+
+.header-left,
+.header-right {
+  width: 150px; /* stabilna szerokość boków */
+  display: flex;
+  align-items: center;
+}
+
+.header-right {
+  justify-content: flex-end;
+}
+
+.header-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* 🔥 idealne centrowanie */
+  gap: 1.5rem;
+}
+
+/* =========================
+   HOME – HERO SECTION
+========================= */
+
+.home-hero {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.8rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+@keyframes logoFadeIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Slogan */
+.home-slogan {
+  font-size: 1.1rem;
+  opacity: 0;
+  max-width: 480px;
+  animation: sloganFade 0.8s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes sloganFade {
+  to {
+    opacity: 0.9;
+  }
+}
+
+/* CTA button – pulse + hover */
+.home-cta {
+  font-size: 1.1rem;
+  padding: 0.8rem 1.6rem;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+.home-cta:hover {
+  animation: none;
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* Subtelny pulse */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(185, 28, 28, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(185, 28, 28, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(185, 28, 28, 0);
+  }
+}
+
+/* =========================
+   HEADER – MINI LOGO
+========================= */
+
+.header-logo {
+  height: 38px;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.header-logo:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* =========================
+   HOME – WIĘKSZE LOGO
+========================= */
+
+.home-logo {
+  width: 90%;
+  max-width: 520px; /* większe logo */
+  opacity: 0;
+  transform: scale(0.96);
+  animation: logoFadeIn 0.9s ease-out forwards;
+}
+
+/* Fade + scale */
+@keyframes logoFadeIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Slogan */
+.home-slogan {
+  font-size: 1.2rem;
+  opacity: 0;
+  max-width: 520px;
+  animation: sloganFade 0.8s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes sloganFade {
+  to {
+    opacity: 0.9;
+  }
+}
+
+/* CTA button */
+.home-cta {
+  font-size: 1.15rem;
+  padding: 0.9rem 1.8rem;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+.home-cta:hover {
+  animation: none;
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* Subtelny pulse */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(185, 28, 28, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 18px rgba(185, 28, 28, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(185, 28, 28, 0);
+  }
+}
