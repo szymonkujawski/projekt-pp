@@ -3,7 +3,7 @@ class HomeView extends HTMLElement {
         this.innerHTML = `
       <section class="home-hero">
         <img 
-          src="/img/logo.png" 
+          src="./img/logo.png" 
           alt="Vinyl Store Logo"
           class="home-logo"
         >

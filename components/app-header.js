@@ -12,7 +12,7 @@ class AppHeader extends HTMLElement {
       <header>
         <div class="header-left">
           <img 
-            src="/img/logo.png" 
+            src="./img/logo.png" 
             alt="Vinyl Store"
             class="header-logo"
             onclick="navigate('home')"
